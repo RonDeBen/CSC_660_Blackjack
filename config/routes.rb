@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  devise_for :users, controllers:{ registrations: 'registrations' }
+
   get 'deck/:id/top_card' => 'decks#top_card'
 
   # The priority is based upon order of creation: first created -> highest priority.
