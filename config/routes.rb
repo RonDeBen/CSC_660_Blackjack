@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   get 'room/:id/top_card' => 'rooms#top_card'
   get 'rooms' => 'rooms#index'
+  post 'users/:id/update_funds' => 'users#update_funds'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
