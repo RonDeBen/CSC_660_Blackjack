@@ -1,9 +1,0 @@
-digraph models_diagram {
-	graph[overlap=false, splines=true, bgcolor="none"]
-	"Card" [shape=Mrecord, label="{Card|id :integer\lrank :character varying\lsuit :character varying\lcreated_at :timestamp without time zone\lupdated_at :timestamp without time zone\l}"]
-	"Deck" [shape=Mrecord, label="{Deck|id :integer\lroom_id :integer\lshoe :integer\lcreated_at :timestamp without time zone\lupdated_at :timestamp without time zone\lcard_ids :integer\ldiscard_pile_ids :integer\l}"]
-	"Room" [shape=Mrecord, label="{Room|id :integer\lname :character varying\lcreated_at :timestamp without time zone\lupdated_at :timestamp without time zone\l}"]
-	"User" [shape=Mrecord, label="{User|id :integer\lemail :character varying\lencrypted_password :character varying\lname :character varying\lfunds :numeric\lcreated_at :timestamp without time zone\lupdated_at :timestamp without time zone\l}"]
-	"Room" -> "User" [arrowtail=odot, arrowhead=crow, dir=both color="#41C6CC"]
-	"Room" -> "Deck" [arrowtail=odot, arrowhead=dot, dir=both color="#03C51D"]
-}
