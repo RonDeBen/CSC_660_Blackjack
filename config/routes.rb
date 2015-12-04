@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   devise_for :users, controllers:{ registrations: 'registrations', sessions: 'sessions' }
 
   get 'room/:id/top_card' => 'rooms#top_card'
+  get 'room/:id/deck' => 'rooms#deck'
   get 'rooms' => 'rooms#index'
   post 'users/:id/update_funds' => 'users#update_funds'
 

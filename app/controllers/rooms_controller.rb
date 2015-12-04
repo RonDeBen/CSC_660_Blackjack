@@ -11,4 +11,9 @@ class RoomsController < ApplicationController
 		@card = room.deck.top_card
 	end
 
+	def deck
+		@room = Room.find_by_id(params[:id])
+		@deck = @room.deck.all_cards
+	end
+
 end

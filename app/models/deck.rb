@@ -25,4 +25,12 @@ class Deck < ActiveRecord::Base
 		end
 		self.card_ids = self.card_ids.shuffle
 	end
+
+	def all_cards
+		all_cards = []
+		self.card_ids.each do |card_id|
+			all_cards << Card.find_by_id(card_id)
+		end
+		all_cards
+	end
 end
