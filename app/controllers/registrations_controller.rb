@@ -5,12 +5,12 @@ class RegistrationsController < Devise::RegistrationsController
 
   def create
   	@user = User.new(name: params[:name], email: params[:email], password: params[:password], funds: params[:funds])
-	if @user.save
-		render 'users/me'
-	else
-		warden.custom_failure!
-		render :json => user.errors, :status => 422
-	end
+    if @user.save
+    	render 'users/me'
+    else
+    	@user = nil;
+    	render 'users/me'
+    end
   end
 
   private

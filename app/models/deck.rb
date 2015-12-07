@@ -27,10 +27,6 @@ class Deck < ActiveRecord::Base
 	end
 
 	def all_cards
-		all_cards = []
-		self.card_ids.each do |card_id|
-			all_cards << Card.find_by_id(card_id)
-		end
-		all_cards
+		Card.find(self.card_ids).group_by(&:id).values
 	end
 end
